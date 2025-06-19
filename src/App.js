@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Signup           from './components/Signup';
+import Login            from './components/Login';
+import Dashboard        from './components/Dashboard';
+import CreateQuiz       from './components/CreateQuiz';
+import QuizDetail       from './components/QuizDetail';
+import StudentQuizzes   from './components/StudentQuizzes';
+import TakeQuiz from './components/TakeQuiz';
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {/* Initial root shows login */}
+        <Route path="/" element={<Navigate to="/login" replace />} />
+
+        <Route path="/login"  element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+
+        {/* Admin routes */}
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/create-quiz" element={<CreateQuiz />} />
+        <Route path="/quiz/:id" element={<QuizDetail />} />
+
+        {/* Student route */}
+        <Route path="/student-quizzes" element={<StudentQuizzes />} />
+        <Route path="/take-quiz/:id" element={<TakeQuiz />} />
+        {/* catch-all */}
+        <Route path="*" element={<Navigate to="/login" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;

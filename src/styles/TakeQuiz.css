@@ -1,0 +1,63 @@
+.take-container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+.take-container h1 {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #333333;
+}
+.timer {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #555555;
+}
+.question {
+  margin-bottom: 24px;
+}
+.question p {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #333333;
+}
+.option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.option input {
+  margin-right: 8px;
+}
+.option span {
+  font-size: 15px;
+  color: #333333;
+}
+.submit-button {
+  background: #007bff;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.submit-button:disabled {
+  background: #a1c5ff;
+  cursor: not-allowed;
+}
+.submit-button:hover:enabled {
+  background: #0056b3;
+}
+.take-container a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+.take-container a:hover {
+  text-decoration: underline;
+}
