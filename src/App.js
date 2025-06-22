@@ -7,9 +7,11 @@ import CreateQuiz       from './components/CreateQuiz';
 import QuizDetail       from './components/QuizDetail';
 import StudentQuizzes   from './components/StudentQuizzes';
 import TakeQuiz from './components/TakeQuiz';
+import Navbar from './components/Navbar';
 export default function App() {
   return (
     <BrowserRouter>
+      <Navbar/>
       <Routes>
         {/* Initial root shows login */}
         <Route path="/" element={<Navigate to="/login" replace />} />
